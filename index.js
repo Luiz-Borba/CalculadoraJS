@@ -33,6 +33,7 @@ document.querySelectorAll(".caracters").forEach(function (event) {
 
 clear.addEventListener("click", function () {
   input.value = "";
+  calculeitionResult.value=""
   input.focus();
 });
 
@@ -44,22 +45,22 @@ input.addEventListener("keydown", function (ev) {
     input.value = input.value.slice(0, -1);
   }
   if (ev.key === "Enter") {
-    calculat();
+    calculate();
   }
   if (ev.key === "Escape") {
     input.value = "";
-    displayCalculation.value=""
+    calculeitionResult.value=""
     input.focus();
   }
 });
 displayCalculation.addEventListener("click", function () {
-  calculat();
+  calculate();
 });
 clear.addEventListener("click", function () {
   input.value = "";
   displayCalculation.value=""
 });
-function calculat() {
+function calculate() {
   const result = eval(input.value);
   calculeitionResult.value = result;
   input.value = "";
